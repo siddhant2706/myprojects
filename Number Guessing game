@@ -1,0 +1,28 @@
+import random
+guessnum=0
+
+print("Welcome. What is your name? ")
+name=input()
+
+number=random.randint(1,20)
+print("Hello " + name + "I am thinking of a number between 1 and 20. Let's see if you can guess the number ")
+
+while guessnum<6:
+    print("Take a guess. ")
+    guess=input()
+    guess=int(guess)
+
+    guessnum=guessnum+1
+    if guess < number:
+        print("your number is a bit low")
+    if guess > number:
+        print("your number is a bit high")
+    if guess==number:
+        break
+if guess==number:
+    guessnum=str(guessnum)
+    print("Well done " + name + " You guessed the number in " + guessnum + " tries")
+
+if guess != number:
+    number=str(number)
+    print("Sorry, the number is " + number)
